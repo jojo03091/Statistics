@@ -132,18 +132,22 @@ namespace 各種資料統計
 
             // 宣告最高的人和最矮的人
             double Highest = 0;
-            double Shortest = 0;
+            double Shortest = 999;
 
-            // 選出班上最高及最低身高
+            // 選出班上最高和最矮的身高
             for (int i = 0; i < height.Length; i++)
             {
-                if (height[i] > Highest && height[i] < 200 && height[i] > 100)
+                if (height[i] > 100 && height[i] < 200)
                 {
-                    Highest = height[i];
-                }
-                if (height[i] < Shortest && height[i] < 200 && height[i] > 100)
-                {
-                    Shortest = height[i];
+                    if (height[i] > Highest)
+                    {
+                        Highest = height[i];
+                    }
+
+                    if (height[i] < Shortest)
+                    {
+                        Shortest = height[i];
+                    }
                 }
             }
 
